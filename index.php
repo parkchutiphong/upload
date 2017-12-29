@@ -16,53 +16,61 @@ include("showfile.php");
 	<link rel="icon" href="pic/upload.png" type="image/x-icon">
 	<link rel="shortcut icon" href="pic/upload.png" type="image/x-icon">
 
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- my java script -->
+	<script src="js/image_script.js"></script>
+
 	<!-- jQuery library -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 
 	<!-- animate css -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 	<!-- my css -->
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/image_style.css" rel="stylesheet">
 
 	<script>
-	// for upload event
-	function funevenupload() {
-		document.getElementById("divupload").style.pointerEvents = "none";
-		document.getElementById("uppic").style.display = "none";
-		document.getElementById("picloader").style.display = "block";
-		document.getElementById("msgToUser").innerHTML = "Uploading...<br>Please wait";
-		document.getElementById("uploadbutton").click();
-	}
-
-		$(document).ready(function(){
-			// animate mouser over upload button
-			$("#uppic").mouseover(function(){
-				$("#uppic").addClass("animated rubberBand");
-			});
-			$("#uppic").mouseout(function(){
-				$("#uppic").removeClass("animated rubberBand");
-			});
-
-			// search function
-			$("#searchfilename").keypress(function(){
-				$.ajax({
-					url: "search.php",
-					type: "post",
-					data: {"keyword": $(this).val()},
-					success: function (response) {
-						$("#data_table").html(response);
-					}
-				});
-			});
-
-		}); // close jquery
-
-</script>
+				// for upload event
+				function funevenupload() {
+					document.getElementById("divupload").style.pointerEvents = "none";
+					document.getElementById("uppic").style.display = "none";
+					document.getElementById("picloader").style.display = "block";
+					document.getElementById("msgToUser").innerHTML = "Uploading...<br>Please wait";
+					document.getElementById("uploadbutton").click();
+				}
+			
+					$(document).ready(function(){
+						// animate mouser over upload button
+						$("#uppic").mouseover(function(){
+							$("#uppic").addClass("animated rubberBand");
+						});
+						$("#uppic").mouseout(function(){
+							$("#uppic").removeClass("animated rubberBand");
+						});
+			
+						// search function
+						$("#searchfilename").keyup(function(){
+							$.ajax({
+								url: "search.php",
+								type: "post",
+								data: {"keyword": $(this).val()},
+								success: function (response) {
+									$("#data_table").html(response);
+								}
+							});
+						});
+			
+					}); // close jquery
+			
+	</script>
 
 
 </head>
@@ -119,7 +127,7 @@ include("showfile.php");
 			<div style="text-align: center;">
 				<span id="data_table">
 					<?php
-					$sql = "SELECT filename
+					$sql = "SELECT *
 					FROM fileupload
 					ORDER BY file_id DESC";
 					$rs = mysqli_query($con, $sql);
@@ -139,6 +147,20 @@ include("showfile.php");
 	</div>
 
 </div> <!-- close fadeIn -->
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img_content">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption" class="caption"></div>
+</div>
+
 </body>
 </html>
 <?php

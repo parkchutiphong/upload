@@ -8,7 +8,7 @@ include("showfile.php");
 
 $keyword = $_POST['keyword'];
 
-$sql = "SELECT filename
+$sql = "SELECT *
 	FROM fileupload
 	WHERE (filename LIKE '%$keyword%')
 	ORDER BY file_id DESC";
