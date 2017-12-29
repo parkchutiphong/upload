@@ -17,28 +17,28 @@ function showFile($rs) {
       }
       $i++;
       // cut file name
-      if (strlen($row[0]) > 20) {
-        $cutname = substr($row[0], 0, 20)."...";
+      if (strlen($row["filename"]) > 20) {
+        $cutname = substr($row["filename"], 0, 20)."...";
       } else {
-        $cutname = $row[0];
+        $cutname = $row["filename"];
       }
       //get ext of file
-      $type = strtolower(pathinfo($row[0], PATHINFO_EXTENSION));
+      $type = strtolower(pathinfo($row["filename"], PATHINFO_EXTENSION));
       //check if file is image file type style='padding: 4px; border: 4px solid white; border-radius: 5px;'
       if ($type == "jpg" || $type == "jpeg" || $type == "png" || $type == "gif" || $type == "bmp") {
         echo "<div class='col-sm-4'>
         <div class='redBorder polaroid'>
-        <a href='upload/$row[0]'><img src='image_resize/$row[0]' style='height: auto; width: 200px' alt='$row[0]'></a><br>
+        <img src='image_resize/{$row["filename"]}' style='height: auto; width: 200px' alt='{$row["filename"]}' id='img{$row["file_id"]}' class='myImg' onclick='show_image( \"img".$row["file_id"]."\", \"upload/".$row["filename"]."\" )'><br>
         $cutname<br>
-        <a href='confirm.php?filename=$row[0]&cutname=$cutname'><img src='pic/delete_icon.png' style='height: auto; width: 20px' alt='Delete'></a>
+        <a href='confirm.php?filename={$row["filename"]}&cutname=$cutname'><img src='pic/delete_icon.png' style='height: auto; width: 20px' alt='Delete'></a>
         </div>
         </div>";
       } else {
         echo "<div class='col-sm-4'>
         <div class='redBorder polaroid'>
-        <a href='upload/$row[0]' style='text-decoration: none;'><img src='pic/new_page_icon.jpg' style='height: auto; width: 100px' alt='$row[0]'>&nbsp;<font color='black' size='3'><b>$type&nbsp;File</b></font></a><br>
+        <a href='upload/{$row["filename"]}' style='text-decoration: none;'><img src='pic/new_page_icon.jpg' style='height: auto; width: 100px' alt='{$row["filename"]}'>&nbsp;<font color='black' size='3'><b>$type&nbsp;File</b></font></a><br>
         $cutname<br>
-        <a href='confirm.php?filename=$row[0]&cutname=$cutname'><img src='pic/delete_icon.png' style='height: auto; width: 20px' alt='Delete'></a>
+        <a href='confirm.php?filename={$row["filename"]}&cutname=$cutname'><img src='pic/delete_icon.png' style='height: auto; width: 20px' alt='Delete'></a>
         </div>
         </div>";
       }

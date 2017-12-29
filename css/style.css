@@ -11,6 +11,9 @@ body {
 	background-position: center;
 }
 
+
+.blur {-webkit-filter: blur(4px);filter: blur(4px);}
+
 /* for footer */
 .footer {
 	position: fixed;
