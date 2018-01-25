@@ -8,6 +8,7 @@ include("showfile.php");
 
 $keyword = $_POST['keyword'];
 
+
 $sql = "SELECT *
 	FROM fileupload
 	WHERE (filename LIKE '%$keyword%')

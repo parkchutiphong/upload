@@ -24,7 +24,7 @@ include("showfile.php");
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	
+
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
@@ -46,7 +46,7 @@ include("showfile.php");
 					document.getElementById("msgToUser").innerHTML = "Uploading...<br>Please wait";
 					document.getElementById("uploadbutton").click();
 				}
-			
+
 					$(document).ready(function(){
 						// animate mouser over upload button
 						$("#uppic").mouseover(function(){
@@ -55,7 +55,7 @@ include("showfile.php");
 						$("#uppic").mouseout(function(){
 							$("#uppic").removeClass("animated rubberBand");
 						});
-			
+
 						// search function
 						$("#searchfilename").keyup(function(){
 							$.ajax({
@@ -67,9 +67,9 @@ include("showfile.php");
 								}
 							});
 						});
-			
+
 					}); // close jquery
-			
+
 	</script>
 
 
@@ -94,7 +94,7 @@ include("showfile.php");
 							echo $_GET["msg"];
 						}
 					} else {
-						echo "Maximum of file size 8 MB.";
+						echo "Upload picture here!!!";
 					}
 					?>
 				</div>
@@ -104,7 +104,7 @@ include("showfile.php");
 				<!-- browse file button -->
 				<div id="divupload" style="text-align: center; padding: 10px;">
 					<label style="cursor: pointer;">
-						<input type="file" name="file1[]" multiple style="display: none;" onchange="funevenupload();">
+						<input type="file" name="file1[]" multiple style="display: none;" onchange="funevenupload();" accept="image/*">
 						<img src="pic/upload.png" style="height: auto; width: 200px;" id="uppic">
 						<center><div id="picloader" class="loader"></div></center>
 					</label>
