@@ -4,7 +4,7 @@ function showFile($rs) {
 
   // check data is not empty
   if (mysqli_num_rows($rs) == 0) {
-    echo "<center><h1>Folder is empty!</h1></center>";
+    echo "<br><div style=\"text-align: center; width: 100%\"><h1>Folder is empty!</h1></div>";
   } else {
 
     echo "<div class='row'>";

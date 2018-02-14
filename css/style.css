@@ -1,3 +1,6 @@
+/* google font */
+@import "https://fonts.googleapis.com/css?family=Nanum+Pen+Script";
+
 body {
 	/* font-family: Comic sans MS; */
 	font-family: 'Nanum Pen Script', cursive;
@@ -6,27 +9,42 @@ body {
 	background-color: #ffffff;
 	padding: 20px 20px;
 
-	background: linear-gradient(
-		rgba(255, 255, 255, 0.8), 
+	/* background: linear-gradient(
+		rgba(255, 255, 255, 0.8),
 		rgba(255, 255, 255, 1)
-		), url('../pic/dogc.jpg');
+		), url('../pic/dogc.jpg'); */
 
 	/* background-image: url('../pic/dogc.jpg'); */
-	background-size: auto 100%;
+	/* background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
-	background-position: center;
+	background-position: center; */
 }
 
+.bg-img {
+	background: linear-gradient(
+		rgba(255, 255, 255, .7),
+		rgba(255, 255, 255, .5)
+		), url(../pic/dogc.jpg) no-repeat center;
+
+	position: fixed;
+	filter: blur(5px);
+	z-index: -1;
+	left: 0px;
+	top: 0px;
+	height: 100%;
+	width: 100%;
+	background-size: auto 100%;
+}
 
 .blur {-webkit-filter: blur(4px);filter: blur(4px);}
 
 /* for footer */
 .footer {
 	position: fixed;
-  	bottom: 0px;
+	bottom: 0px;
 	right: 10px;
-	text-align: right;
+	text-align: left;
 }
 
 /* confirm delete link */

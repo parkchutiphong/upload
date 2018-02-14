@@ -60,7 +60,7 @@ $cutname = $_GET['cutname'];
         if ($type == "jpg" || $type == "jpeg" || $type == "png" || $type == "gif" || $type == "bmp") {
           echo "<div class='polaroid'><img src='upload/".$_GET["filename"]."' style='height: auto; width: 100%;' alt='".$_GET["filename"]."' class='img-responsive'></div>";
         } else {
-          echo "<center><img src='pic/new_page_icon.jpg' style='height: auto; width: 100px' alt='$filename'>&nbsp;<font color='black' size='3'><b>$type&nbsp;File</b></font></center>";
+          echo "<br><div style=\"text-align: center; widht: 100%;\"><img src='pic/new_page_icon.jpg' style='height: auto; width: 100px' alt='$filename'>&nbsp;<font color='black' size='3'><b>$type&nbsp;File</b></font></div>";
         }
         ?>
       </div>

@@ -17,7 +17,7 @@ $sql = "SELECT *
 $rs = mysqli_query($con, $sql);
 // check data is not empty
 if (mysqli_num_rows($rs) == 0) {
-	echo "<center><h1>No files found!</h1></center>";
+	echo "<br><div style=\"text-align: center; widht: 100%;\"><h1>No files found!</h1></div>";
 } else {
 	showFile($rs);
 }

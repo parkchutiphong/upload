@@ -16,18 +16,8 @@ include("showfile.php");
 	<link rel="icon" href="pic/upload.png" type="image/x-icon">
 	<link rel="shortcut icon" href="pic/upload.png" type="image/x-icon">
 
-	<!-- my java script -->
-	<script src="js/image_script.js"></script>
-
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 
 	<!-- animate css -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
@@ -37,46 +27,13 @@ include("showfile.php");
 	<link href="css/image_style.css" rel="stylesheet">
 
 	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
-	
-	<script>
-				// for upload event
-				function funevenupload() {
-					document.getElementById("divupload").style.pointerEvents = "none";
-					document.getElementById("uppic").style.display = "none";
-					document.getElementById("picloader").style.display = "block";
-					document.getElementById("msgToUser").innerHTML = "Uploading...<br>Please wait";
-					document.getElementById("uploadbutton").click();
-				}
-
-					$(document).ready(function(){
-						// animate mouser over upload button
-						$("#uppic").mouseover(function(){
-							$("#uppic").addClass("animated rubberBand");
-						});
-						$("#uppic").mouseout(function(){
-							$("#uppic").removeClass("animated rubberBand");
-						});
-
-						// search function
-						$("#searchfilename").keyup(function(){
-							$.ajax({
-								url: "search.php",
-								type: "post",
-								data: {"keyword": $(this).val()},
-								success: function (response) {
-									$("#data_table").html(response);
-								}
-							});
-						});
-
-					}); // close jquery
-
-	</script>
-
+	<!-- <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet"> -->
 
 </head>
 <body>
+	<!-- for blur background picture -->
+	<div class="bg-img"></div>
+
 	<!-- fadeIn -->
 	<div class="elementToFadeIn">
 
@@ -108,7 +65,7 @@ include("showfile.php");
 					<label style="cursor: pointer;">
 						<input type="file" name="file1[]" multiple style="display: none;" onchange="funevenupload();" accept="image/*">
 						<img src="pic/upload.png" style="height: auto; width: 200px;" id="uppic">
-						<center><div id="picloader" class="loader"></div></center>
+						<br><div style="text-align: center; widht: 100%;"><div id="picloader" class="loader"></div></div>
 					</label>
 				</div>
 				<!-- upload button -->
@@ -162,6 +119,49 @@ include("showfile.php");
   <!-- Modal Caption (Image Text) -->
   <div id="caption" class="caption"></div>
 </div>
+
+<!-- ------------------------------------------------------------------------------- -->
+<!-- my java script -->
+<script src="js/image_script.js"></script>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>
+			// for upload event
+			function funevenupload() {
+				document.getElementById("divupload").style.pointerEvents = "none";
+				document.getElementById("uppic").style.display = "none";
+				document.getElementById("picloader").style.display = "block";
+				document.getElementById("msgToUser").innerHTML = "Uploading...<br>Please wait";
+				document.getElementById("uploadbutton").click();
+			}
+
+				$(document).ready(function(){
+					// animate mouser over upload button
+					$("#uppic").mouseover(function(){
+						$("#uppic").addClass("animated rubberBand");
+					});
+					$("#uppic").mouseout(function(){
+						$("#uppic").removeClass("animated rubberBand");
+					});
+
+					// search function
+					$("#searchfilename").keyup(function(){
+						$.ajax({
+							url: "search.php",
+							type: "post",
+							data: {"keyword": $(this).val()},
+							success: function (response) {
+								$("#data_table").html(response);
+							}
+						});
+					});
+
+				}); // close jquery
+
+</script>
+<!-- ------------------------------------------------------------------------------- -->
 
 </body>
 </html>
