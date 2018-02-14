@@ -1,11 +1,18 @@
 body {
-	font-family: Comic sans MS;
-	font-size: 16;
+	/* font-family: Comic sans MS; */
+	font-family: 'Nanum Pen Script', cursive;
+	font-size: 20;
 	color: #dc143c;
 	background-color: #ffffff;
 	padding: 20px 20px;
 
-	background-image: url('../pic/dogc.jpg');
+	background: linear-gradient(
+		rgba(255, 255, 255, 0.8), 
+		rgba(255, 255, 255, 1)
+		), url('../pic/dogc.jpg');
+
+	/* background-image: url('../pic/dogc.jpg'); */
+	background-size: auto 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
@@ -17,7 +24,7 @@ body {
 /* for footer */
 .footer {
 	position: fixed;
-  bottom: 0px;
+  	bottom: 0px;
 	right: 10px;
 	text-align: right;
 }

@@ -29,7 +29,6 @@ include("showfile.php");
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
 
-
 	<!-- animate css -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
@@ -37,6 +36,9 @@ include("showfile.php");
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/image_style.css" rel="stylesheet">
 
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
+	
 	<script>
 				// for upload event
 				function funevenupload() {

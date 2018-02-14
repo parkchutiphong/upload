@@ -20,6 +20,9 @@ if (isset($_SESSION['username'])) header("Location: showdata.php");
 
 	<!-- my css -->
 	<link href="css/style.css" rel="stylesheet">
+	
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
 
 </head>
 <body>

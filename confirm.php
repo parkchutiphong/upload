@@ -26,6 +26,9 @@ $cutname = $_GET['cutname'];
   	<!-- my css -->
   	<link href="css/style.css" rel="stylesheet">
 
+    	<!-- google font -->
+	    <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
+
 </head>
 <body>
 <!-- fadeIn -->
