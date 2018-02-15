@@ -48,11 +48,11 @@ function showFile($rs) {
         <br>
         $cutname
         <br>
-        <a href='JavaScript:void(0);' onclick='copyLink(\"".$root."upload/".$row["filename"]."\")'>
-        <span class='glyphicon' style='color: #dc143c;'>&#xe144;</span></a>
+        <a href='JavaScript:void(0);' onclick='copyLink(\"".$root."upload/".$row["filename"]."\")' data-toggle='tooltip' data-placement='bottom' title='Copy link'>
+        <i class='fas fa-link' style='color: #dc143c;'></i></a>
         &nbsp;
-        <a href='confirm.php?filename={$row["filename"]}&cutname=$cutname'>
-        <span class='glyphicon' style='color: #dc143c;'>&#xe020;</span>
+        <a href='confirm.php?filename={$row["filename"]}&cutname=$cutname' data-toggle='tooltip' data-placement='bottom' title='Delete'>
+        <i class='fas fa-trash-alt' style='color: #dc143c;'></i>
         </a>
         </div>
         </div>";

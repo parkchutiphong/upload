@@ -5,6 +5,7 @@ require("connect.php");
 // include to show file item
 include("showfile.php");
 
+// include footer
 include("footer.php");
 
 ?>
@@ -159,6 +160,9 @@ include("footer.php");
 				}); // close jquery
 
 </script>
+
+<!-- load main javascript -->
+<script src="js/main.js"></script>
 
 <!-- show box script -->
 <script src="js/image_script.js"></script>
