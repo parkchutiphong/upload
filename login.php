@@ -2,6 +2,8 @@
 session_start();
 
 if (isset($_SESSION['username'])) header("Location: showdata.php");
+
+include("footer.php");
 ?>
 <html>
 <head>
@@ -20,9 +22,6 @@ if (isset($_SESSION['username'])) header("Location: showdata.php");
 
 	<!-- my css -->
 	<link href="css/style.css" rel="stylesheet">
-	
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
 
 </head>
 <body>
@@ -71,15 +70,12 @@ if (isset($_SESSION['username'])) header("Location: showdata.php");
 		</div>
 
 		<!-- Contact me -->
-		<div class="footer">
-			<h3>Contact me</h3>
-			<p>E-mail parktesla@hotmail.com</p>
-		</div>
+		<?php show_footer(strtolower(basename(__FILE__))); ?>
 
 	</div> <!-- close fadeIn -->
 
 	<!-- Google reCAPTCHA -->
-	<script src="//www.google.com/recaptcha/api.js?hl=th"></script>
+	<script src="//www.google.com/recaptcha/api.js?hl=en"></script>
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- jQuery library -->

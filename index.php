@@ -5,6 +5,8 @@ require("connect.php");
 // include to show file item
 include("showfile.php");
 
+include("footer.php");
+
 ?>
 
 <html>
@@ -25,9 +27,6 @@ include("showfile.php");
 	<!-- my css -->
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/image_style.css" rel="stylesheet">
-
-	<!-- google font -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet"> -->
 
 </head>
 <body>
@@ -99,34 +98,33 @@ include("showfile.php");
 	</div> <!-- close main container -->
 
 	<!-- Contact me -->
-	<div class="footer">
-		<h3>Contact me</h3>
-		<p>E-mail parktesla@hotmail.com</p>
-		<p><a href="login.php" class="showDataLink">Show data</a></p>
-	</div>
+	<?php show_footer(strtolower(basename(__FILE__))); ?>
 
 </div> <!-- close fadeIn -->
 
 <!-- The Modal -->
-<div id="myModal" class="modal">
-
-  <!-- The Close Button -->
-  <span class="close">&times;</span>
+<div id="imgModal" class="modal">
 
   <!-- Modal Content (The Image) -->
   <img class="modal-content" id="img_content">
 
   <!-- Modal Caption (Image Text) -->
   <div id="caption" class="caption"></div>
+
+	<!-- The Close Button -->
+	<!-- <span class="close">&times;</span> -->
+
 </div>
 
 <!-- ------------------------------------------------------------------------------- -->
-<!-- my java script -->
-<script src="js/image_script.js"></script>
+
+
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!-- awesome font -->
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 <script>
 			// for upload event
 			function funevenupload() {
@@ -161,6 +159,13 @@ include("showfile.php");
 				}); // close jquery
 
 </script>
+
+<!-- show box script -->
+<script src="js/image_script.js"></script>
+
+<!-- copy link to clipboard script -->
+<script src="js/copy_text_to_clipboard.js"></script>
+
 <!-- ------------------------------------------------------------------------------- -->
 
 </body>

@@ -14,4 +14,6 @@ $password = "";
 $db = "id622085_se107";
 
 $con = mysqli_connect($host, $user, $password, $db) or die("Can't connect to Database.");
+
+mysqli_query($con, "SET NAMES UTF8");
 //---------------------------------------------------------

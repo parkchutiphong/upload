@@ -7,6 +7,8 @@ if (!isset($_SESSION['username'])) {
 
 // connect to database
 require("connect.php");
+
+include("footer.php");
 ?>
 
 <html>
@@ -20,19 +22,12 @@ require("connect.php");
 
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<!-- Latest compiled JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<!-- jQuery library -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 	<!-- animate css -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
 	<!-- my css -->
 	<link href="css/style.css" rel="stylesheet">
-
-	<!-- google font -->
-	<link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
 
 </head>
 <body>
@@ -71,7 +66,7 @@ require("connect.php");
 							echo "<tr>
 							<td class='td_Ip'>$row[0]</td>
 							<td class='td_Ip'>$row[1]</td>
-							<td class='td_Ip'>$row[2]</td>
+							<td class='td_Ip'>".date('d/m/Y', strtotime($row[2]))."</td>
 							<td class='td_Ip'>$row[3]</td>
 							<td class='td_Ip'>$cutname</td>
 							</tr>";
@@ -96,11 +91,16 @@ require("connect.php");
 			</div> <!-- close main container -->
 
 			<!-- Contact me -->
-			<div class="footer">
-				<h3>Contact me</h3>
-				<p>E-mail parktesla@hotmail.com</p>
-			</div>
+			<?php show_footer(strtolower(basename(__FILE__))); ?>
 
 		</div> <!-- close fadeIn -->
+
+<!-- ------------------------------------------------------------------------------- -->
+		<!-- Latest compiled JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<!-- jQuery library -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- ------------------------------------------------------------------------------- -->
+
 </body>
 </html>
